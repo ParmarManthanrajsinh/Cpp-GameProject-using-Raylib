@@ -3,37 +3,52 @@
 
 using namespace std;
 
-int main () {
+class Ball
+{
+public:
+    float x = 360, y = 360;
+    int speed_x = 5, speed_y = 5;
+    int radius = 15;
+
+    void Draw()
+    {
+        DrawCircle(x, y, radius, WHITE);
+    }
+
+    void Update()
+    {
+        if (x + radius >= GetScreenWidth() || x - radius <= 0)
+        {
+            speed_x *= -1;
+        }
+        if (y + radius >= GetScreenHeight() || y - radius <= 0)
+        {
+            speed_y *= -1;
+        }
+        x += speed_x;
+        y += speed_y;
+    }
+};
+
+int main()
+{
 
     const int SCREEN_WIDTH = 1280;
     const int SCREEN_HEIGHT = 720;
-    int ball_x = 360;
-    int ball_y = 360;
-    int ball_speed_x = 5;
-    int ball_speed_y = 5;
-    int ball_radius = 15;
+
+    Ball ball;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Template");
     SetTargetFPS(60);
 
-    while (WindowShouldClose() == false){
-   
-        ball_x += ball_speed_x;
-        ball_y += ball_speed_y;
-
-        if(ball_x + ball_radius >= SCREEN_WIDTH || ball_x - ball_radius <= 0)
-        {
-            ball_speed_x *= -1;
-        }
-
-        if(ball_y + ball_radius >= SCREEN_HEIGHT || ball_y - ball_radius <= 0)
-        {
-            ball_speed_y *= -1;
-        }
-        
+    while (WindowShouldClose() == false)
+    {
         BeginDrawing();
-            ClearBackground(BLACK);
-            DrawCircle(ball_x,ball_y,ball_radius, WHITE);
+        ClearBackground(BLACK);
+
+        ball.Update();
+        ball.Draw();
+
         EndDrawing();
     }
 
