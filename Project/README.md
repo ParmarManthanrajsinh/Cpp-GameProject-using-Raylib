@@ -1,6 +1,2 @@
-# Raylib C++ Starter Template
-
-Raylib C++ Starter Template for Visual Studio Code on Windows.
-
-
-
+This is a Simple Wall breaking Game
+made using cpp Raylib library 
