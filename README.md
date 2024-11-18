@@ -8,8 +8,6 @@ A collection of classic games implemented in C++ using the Raylib library. This 
 - [Games Included](#games-included)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 This repository contains a series of mini-games developed with C++ and the Raylib library. The games included are popular and simple to understand, making it a great starting point for those interested in learning game development fundamentals using C++.
