@@ -24,6 +24,7 @@ public:
         if (y + radius >= GetScreenHeight())
         {
             x = 360, y = 360;
+            speed_x = 5, speed_y = 5;
             running = false;
         }
         if (x + radius >= GetScreenWidth() || x - radius <= 0)
@@ -48,7 +49,7 @@ public:
 
     void Draw()
     {
-        DrawRectangle(x, y, width, hight, GREEN);
+        DrawRectangle(x, y, width, hight, RED);
     }
 
     void Update()
@@ -95,7 +96,7 @@ public:
     {
         if (!isHit)
         {
-            DrawRectangle(x, y, width, hight, GREEN);
+            DrawRectangle(x, y, width, hight, RED);
         }
     }
 
