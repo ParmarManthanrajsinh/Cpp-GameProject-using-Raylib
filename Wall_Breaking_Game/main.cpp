@@ -4,7 +4,7 @@
 using namespace std;
 
 /* Global Values */
-const float offset = 31.3;
+const float offset = 30;
 bool running = true;
 
 class Ball
@@ -48,7 +48,7 @@ public:
 
     void Draw()
     {
-        DrawRectangle(x, y, width, hight, WHITE);
+        DrawRectangle(x, y, width, hight, GREEN);
     }
 
     void Update()
@@ -81,7 +81,7 @@ public:
 class Obstacle
 {
 public:
-    float x = 0, y = 0;
+    float x, y;
     float width = offset, hight = offset;
     bool isHit = false;
 
@@ -95,7 +95,7 @@ public:
     {
         if (!isHit)
         {
-            DrawRectangle(x, y, width, hight, WHITE);
+            DrawRectangle(x, y, width, hight, GREEN);
         }
     }
 
@@ -109,33 +109,48 @@ public:
     }
 };
 
+void GenrateObstacles(int row, int column, int total, Obstacle obstacles[])
+{
+    // Set positions of all obstacles once
+    int index = 0;
+    for (int i = 0; i < row; i++)
+    {
+        int value = GetRandomValue(0, 3);
+        if (value == 0)
+        {
+            continue;
+        }
+
+        for (int j = 0; j < column; j++)
+        {
+            if (value == 0)
+            {
+                continue;
+            }
+            obstacles[index].SetPosition((offset + 10) * j, (offset + 10) * i);
+            index++;
+        }
+    }
+}
+
 int main()
 {
     const int SCREEN_WIDTH = 720;
     const int SCREEN_HEIGHT = 720;
 
-    const int rows = 4;
-    const int columns = 11;
-    const int totalObstacles = rows * columns;
-
     Ball ball;
     Player player;
-    Obstacle obstacles[totalObstacles];
 
     // Initialize window
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Brick Breaker Game");
     SetTargetFPS(60);
 
-    // Set positions of all obstacles once
-    int index = 0;
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < columns; j++)
-        {
-            obstacles[index].SetPosition(offset + offset * 2 * j, offset + offset * 2 * i);
-            index++;
-        }
-    }
+    const int rows = 8;
+    const int columns = 18;
+    const int totalObstacles = rows * columns;
+    Obstacle obstacles[totalObstacles];
+
+    GenrateObstacles(rows, columns, totalObstacles, obstacles);
 
     while (!WindowShouldClose())
     {
@@ -180,6 +195,8 @@ int main()
 
             DrawText("Game Over!", 260, 300, 40, RED);
             DrawText("Press any key to restart", 220, 360, 20, WHITE);
+
+            GenrateObstacles(rows, columns, totalObstacles, obstacles);
 
             for (int i = 0; i < totalObstacles; i++)
             {

@@ -6,6 +6,7 @@
 using namespace std;
 
 Color green = {69, 222, 27, 255};
+Color darkgreen = {35, 143, 6, 255};
 
 int cellsize = 30;
 int cellcount = 25;
@@ -37,7 +38,17 @@ public:
             float x = body[i].x;
             float y = body[i].y;
             Rectangle segment = Rectangle{offset + x * cellsize, offset + y * cellsize, (float)cellsize, (float)cellsize};
-            DrawRectangleRounded(segment, 0.5, 2, green);
+            if (i % 2 == 0)
+            {
+                if (i == 0)
+                    DrawRectangleRounded(segment, 0.5, 2, darkgreen);
+                else
+                    DrawRectangleRounded(segment, 1, 2, darkgreen);
+            }
+            else
+            {
+                DrawRectangleRounded(segment, 1, 2, green);
+            }
         }
     }
 
