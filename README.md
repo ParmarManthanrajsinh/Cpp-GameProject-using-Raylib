@@ -35,6 +35,9 @@ This repository contains a series of mini-games developed with C++ and the **Ray
 ### 4. 📝 Starter Template
 - A ready-to-use template that includes basic window initialization, game loop setup, and event handling.
 
+### 5. 🕹️ Tetris Game
+- Tetris is a classic puzzle game where you rotate and arrange falling blocks to clear lines and prevent the screen from filling up.
+
 ## 💻 Installation
 
 ### Prerequisites
