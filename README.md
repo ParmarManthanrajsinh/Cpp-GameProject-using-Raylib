@@ -38,7 +38,7 @@ This repository contains a series of mini-games developed with C++ and the **Ray
 ### 5. 🕹️ Tetris Game
 - Tetris is a classic puzzle game where you rotate and arrange falling blocks to clear lines and prevent the screen from filling up.
 
-### 6. 📊 Shorting Representation
+### 6. 📊 Sorting Representation
 - Visual Representation of different Sorting algorithem like bubble sort, selection sort, insertion sort, etc  
 
 ## 💻 Installation
