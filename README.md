@@ -42,7 +42,10 @@ This repository contains a series of mini-games developed with C++ and the **Ray
 - Visual Representation of different Sorting algorithem like bubble sort, selection sort, insertion sort, etc
 
 ### 7. 🚀 SpaceInvaders Game
-- Spaceship alien Shooting game made in c++  
+- Spaceship alien Shooting game made in C++  
+
+### 8. 🌱 Conway's Game of Life
+- A cellular automaton devised by mathematician John Conway, where cells evolve based on simple rules.
 
 ## 💻 Installation
 
