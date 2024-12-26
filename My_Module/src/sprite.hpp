@@ -19,6 +19,7 @@ private:
 public:
     bool IsAnimation;
     bool loop;
+    bool hflip;
 
     float scale;
     float rotation;

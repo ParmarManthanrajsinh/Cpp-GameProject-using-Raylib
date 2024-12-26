@@ -17,6 +17,7 @@ Sprite::Sprite(Vector2 pos, vector<Image> images, double animationSpeed, bool lo
 {
     IsAnimation = true;
     loop = looping;
+    hflip = false;
 
     position = pos;
     total_no_frames = images.size();
@@ -55,6 +56,24 @@ void Sprite::Draw()
             current_frame = 0; // Restart animation
         }
     }
-    // Draw only the current frame
-    DrawTextureEx(sprites[current_frame], {position.x, position.y}, rotation, scale, WHITE);
+
+    // Define the source rectangle
+    Rectangle sourceRect = {
+        0.0f,
+        0.0f,
+        static_cast<float>(sprites[current_frame].width) * (hflip ? -1 : 1), // Flip horizontally if hflip is true
+        static_cast<float>(sprites[current_frame].height)};
+
+    // Define the destination rectangle
+    Rectangle destRect = {
+        position.x,
+        position.y,
+        sprites[current_frame].width * scale,
+        sprites[current_frame].height * scale};
+
+    // Define the origin for rotation (center of the sprite)
+    Vector2 origin = {sprites[current_frame].width / 2.0f, sprites[current_frame].height / 2.0f};
+
+    // Draw the texture
+    DrawTexturePro(sprites[current_frame], sourceRect, destRect, origin, rotation, WHITE);
 }

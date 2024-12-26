@@ -53,6 +53,7 @@ int main()
     // Control rotation and scale
     sprite.rotation = 0;
     sprite.scale = 2;
+    sprite.hflip = true;
 
     while (!WindowShouldClose())
     {
