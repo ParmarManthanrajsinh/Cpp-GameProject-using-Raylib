@@ -47,6 +47,12 @@ This repository contains a series of mini-games developed with C++ and the **Ray
 ### 8. 🌱 Conway's Game of Life
 - A cellular automaton devised by mathematician John Conway, where cells evolve based on simple rules.
 
+### 9. 🧩 My_module
+- A custom module that demonstrates specific functionality or a unique game mechanic.
+
+### 10. 🎭 Character_Demo
+- A demo showcasing character movement, animations, and interactions.
+
 ## 💻 Installation
 
 ### Prerequisites
