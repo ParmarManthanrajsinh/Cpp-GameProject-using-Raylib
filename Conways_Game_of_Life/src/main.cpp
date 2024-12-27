@@ -23,7 +23,7 @@ int main()
 
     while (!WindowShouldClose())
     {
-        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             Vector2 position = GetMousePosition();
             int row = position.y / cell_size;
