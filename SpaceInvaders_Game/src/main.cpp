@@ -38,7 +38,7 @@ int main()
         BeginDrawing();
 
         ClearBackground(grey);
-        DrawRectangleRoundedLines({10, 10, 780, 780}, 0.18, 20, 2, yellow);
+        DrawRectangleRoundedLinesEx({10, 10, 780, 780}, 0.18, 20, 2, yellow);
 
         DrawLineEx({25, 730}, {775, 730}, 3, yellow);
         if (game.run)

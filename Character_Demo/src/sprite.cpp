@@ -49,11 +49,16 @@ void Sprite::Draw()
     {
         if (current_frame < total_no_frames - 1)
         {
+            IsAnimation = true;
             current_frame++;
         }
         else if (loop)
         {
             current_frame = 0; // Restart animation
+        }
+        else if (!loop)
+        {
+            IsAnimation = false;
         }
     }
 

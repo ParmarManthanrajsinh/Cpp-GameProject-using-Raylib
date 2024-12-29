@@ -9,18 +9,21 @@ private:
 
     int speed;
 
-    Sprite Idle;
-    Sprite Walk;
+    Sprite *Idle;
+    Sprite *Walk;
+    Sprite *Punch;
 
     enum State
     {
         IDLE,
         WALK_LEFT,
         WALK_RIGHT,
+        PUNCH
     } state;
 
 public:
     Character(Vector2 pos);
+    ~Character();
 
     void Draw();
     void HandleInput();
