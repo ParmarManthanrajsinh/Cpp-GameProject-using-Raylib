@@ -10,5 +10,10 @@ private:
 public:
     FlappyBird(Vector2 pos);
     ~FlappyBird();
+
+    bool IsHit;
+
     void Draw();
+    void Update();
+    void Jump();
 };

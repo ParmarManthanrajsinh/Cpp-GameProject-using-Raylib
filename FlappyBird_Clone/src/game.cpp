@@ -40,3 +40,16 @@ void Game::Draw()
     DrawBackground();
     flappybird.Draw();
 }
+
+void Game::Update()
+{
+    flappybird.Update();
+}
+
+void Game::HandleInput()
+{
+    if (IsKeyPressed(KEY_SPACE))
+    {
+        flappybird.Jump();
+    }
+}
