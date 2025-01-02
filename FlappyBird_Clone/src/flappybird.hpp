@@ -5,12 +5,12 @@ class FlappyBird
 {
 private:
     Vector2 position;
-    Sprite *bird;
+    Sprite bird;
 
 public:
     FlappyBird(Vector2 pos);
-    ~FlappyBird();
 
+    Rectangle bird_hitbox;
     bool IsHit;
 
     void Draw();

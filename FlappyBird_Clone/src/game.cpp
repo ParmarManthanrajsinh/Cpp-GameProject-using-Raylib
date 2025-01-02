@@ -39,11 +39,13 @@ void Game::Draw()
 {
     DrawBackground();
     flappybird.Draw();
+    pipe_generator.Draw();
 }
 
 void Game::Update()
 {
     flappybird.Update();
+    pipe_generator.Update();
 }
 
 void Game::HandleInput()

@@ -1,7 +1,8 @@
 #pragma once
+
 #include <raylib.h>
 #include "flappybird.hpp"
-
+#include "pipe_generator.hpp"
 class Game
 {
 private:
@@ -12,11 +13,12 @@ private:
     void DrawBackground();
 
     FlappyBird flappybird;
+    PipeGenerator pipe_generator;
 
 public:
     Game();
     ~Game();
-    
+
     void Draw();
     void Update();
     void HandleInput();
