@@ -5,7 +5,14 @@ FlappyBird::FlappyBird(Vector2 pos) : bird(position, vector<Image>{LoadImage("Ga
     position = pos;
     bird.scale = 1.5;
     IsHit = false;
-    bird_hitbox = {position.x, position.y, 34 * 1.5, 24 * 1.5};
+    bird_hitbox = {position.x - 5, position.y - 10, 35, 30};
+
+    wing_sound = LoadSound("SoundEfects/wing.wav");
+}
+
+FlappyBird::~FlappyBird()
+{
+    UnloadSound(wing_sound);
 }
 
 void FlappyBird::Draw()
@@ -26,6 +33,7 @@ void FlappyBird::Update()
     else
     {
         position.y += (IsHit) ? 6 : 2;
+        bird_hitbox.y += (IsHit) ? 6 : 2;
 
         bird.SetPosition(position);
         bird.rotation += 0.5;
@@ -36,16 +44,27 @@ void FlappyBird::Update()
             bird.IsAnimation = false;
         }
     }
-    bird_hitbox.x = position.x;
-    bird_hitbox.y = position.y;
 }
 
 void FlappyBird::Jump()
 {
     if (!IsHit)
     {
+        PlaySound(wing_sound);
         position.y -= 50;
+        bird_hitbox.y -= 50;
         bird.SetPosition(position);
         bird.rotation = -40;
     }
+}
+
+void FlappyBird::Reset(Vector2 pos)
+{
+    position = pos;
+
+    IsHit = false;
+    bird.IsAnimation = true;
+
+    bird_hitbox = {position.x - 5, position.y - 10, 35, 30};
+    bird.rotation = 0;
 }

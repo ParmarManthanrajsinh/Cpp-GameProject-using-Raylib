@@ -4,16 +4,18 @@
 class Pipe
 {
 private:
-    Rectangle pipe_hitbox;
     Vector2 position;
 
     Texture2D pipe_texture;
 
     int speed;
+
 public:
+    Pipe() {}
     Pipe(Vector2 position, int speed, bool flip);
     ~Pipe();
 
+    Rectangle pipe_hitbox;
     bool flip;
 
     void Draw();

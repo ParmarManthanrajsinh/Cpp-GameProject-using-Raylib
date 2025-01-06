@@ -50,8 +50,11 @@ This repository contains a series of mini-games developed with C++ and the **Ray
 ### 9. 🧩 My_module
 - A custom module that demonstrates specific functionality or a unique game mechanic.
 
-### 10. 🎭 Character_Demo
+### 10. 🎭 Character Demo
 - A demo showcasing character movement, animations, and interactions.
+
+### 11. 🐤 FlappyBird Game Clone
+- A simple clone of the popular Flappy Bird game.
 
 ## 💻 Installation
 

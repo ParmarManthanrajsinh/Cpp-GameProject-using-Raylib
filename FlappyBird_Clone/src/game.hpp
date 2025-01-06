@@ -19,7 +19,10 @@ public:
     Game();
     ~Game();
 
+    bool run;
+
     void Draw();
     void Update();
+    void Reset();
     void HandleInput();
 };

@@ -6,18 +6,19 @@ Pipe::Pipe(Vector2 position, int speed, bool flip)
     {
         Image pipe_image = LoadImage("GameObjects/pipe-green-flip.png");
         pipe_texture = LoadTextureFromImage(pipe_image);
+        UnloadImage(pipe_image);
     }
     else
     {
         Image pipe_image = LoadImage("GameObjects/pipe-green.png");
         pipe_texture = LoadTextureFromImage(pipe_image);
+        UnloadImage(pipe_image);
     }
-
     this->position = position;
     this->speed = speed;
     this->flip = flip;
 
-    pipe_hitbox = {position.x, position.y, 52, 320};
+    pipe_hitbox = {position.x + 2, position.y, 52 - 4, 320};
 }
 
 Pipe::~Pipe()
@@ -35,7 +36,7 @@ void Pipe::Draw()
 void Pipe::Update()
 {
     position.x -= speed;
-    pipe_hitbox.x = position.x;
+    pipe_hitbox.x -= speed;
 }
 
 bool Pipe::IsOffScreen()
