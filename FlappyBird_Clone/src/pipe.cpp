@@ -29,8 +29,6 @@ Pipe::~Pipe()
 void Pipe::Draw()
 {
     DrawTexture(pipe_texture, position.x, position.y, WHITE);
-    // Debug
-    // DrawRectangle(pipe_hitbox.x, pipe_hitbox.y, pipe_hitbox.width, pipe_hitbox.height, RED);
 }
 
 void Pipe::Update()
