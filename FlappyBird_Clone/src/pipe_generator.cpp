@@ -28,6 +28,7 @@ PipeGenerator::PipeGenerator()
     lastUpdateTime = 0;
 }
 
+// Pipe distroyer 😁😁
 PipeGenerator::~PipeGenerator()
 {
     delete pipe1;
