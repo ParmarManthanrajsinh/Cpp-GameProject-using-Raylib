@@ -79,6 +79,5 @@ void Sprite::Draw()
     // Define the origin for rotation (center of the sprite)
     Vector2 origin = {sprites[current_frame].width / 2.0f, sprites[current_frame].height / 2.0f};
 
-    // Draw the texture
     DrawTexturePro(sprites[current_frame], sourceRect, destRect, origin, rotation, WHITE);
 }
