@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <map>
+#include <array>
 #include "position.h"
 #include "colors.h"
 
@@ -12,7 +13,7 @@ class Block
 private:
     int cell_size;
     int rotation_state;
-    vector<Color> colors;
+    array<Color, 8> colors;
     int rowoffset;
     int coloffset;
 
@@ -22,8 +23,12 @@ public:
 
     Block();
     void Draw(int offsetX, int offsetY);
-    void Move(int,int);
+    void Move(int, int);
     void Rotate();
     void UndoRotation();
     vector<Position> GetCellPosition();
+
+    /* Debuging code */
+    // static int copy_count;
+    // Block(const Block &other);
 };

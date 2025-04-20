@@ -1,14 +1,9 @@
 #pragma once
 #include <raylib.h>
 #include <vector>
+#include <array>
 
 extern const Color grey;
-extern const Color red;
-extern const Color blue;
-extern const Color green;
-extern const Color orange;
-extern const Color yellow;
 extern const Color cyan;
-extern const Color purple;
 
-std::vector<Color> GetCellColor();
+std::array<Color, 8> GetCellColor();

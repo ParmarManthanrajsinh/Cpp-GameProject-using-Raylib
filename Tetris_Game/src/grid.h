@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+#include <array>
 #include <raylib.h>
 using namespace std;
 
@@ -8,7 +8,7 @@ class Grid
 private:
     int rows, cols;
     int cell_size;
-    vector<Color> colors;
+    array<Color, 8> colors;
     bool IsRowFull(int row);
     void ClearRow(int row);
     void MoveRowDown(int row, int rows);

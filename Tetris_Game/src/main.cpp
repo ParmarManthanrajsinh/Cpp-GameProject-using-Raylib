@@ -4,6 +4,15 @@
 
 double lastupdatetime = 0;
 
+/* Debuging code */
+// static int alloc_count = 0;
+// void *operator new(size_t size)
+// {
+//     cout << "Allocating " << size << " bytes" << endl;
+//     alloc_count++;
+//     return malloc(size);
+// }
+
 bool Delay(double time)
 {
     double curr_time = GetTime();
@@ -18,8 +27,8 @@ bool Delay(double time)
 int main()
 {
     int x_offset = 200, y_offset = 20;
-    const int screenWidth = 300;
-    const int screenHeight = 600;
+    constexpr int screenWidth = 300;
+    constexpr int screenHeight = 600;
     Color darkBlue = {28, 28, 163, 255};
 
     Game game = Game();
@@ -59,6 +68,10 @@ int main()
 
         EndDrawing();
     }
+
+    /* Debuging code */
+    // cout << "Allocations: " << alloc_count << endl;
+    // cout << "Copies: " << Block::copy_count << endl;
 
     CloseWindow();
 }
