@@ -31,7 +31,7 @@ int main()
     constexpr int screenHeight = 600;
     Color darkBlue = {28, 28, 163, 255};
 
-    Game game = Game();
+    Game game;
 
     InitWindow(screenWidth + x_offset, screenHeight + y_offset, "Tetris Game");
     SetTargetFPS(60);
