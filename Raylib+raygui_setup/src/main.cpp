@@ -71,7 +71,7 @@ int main()
         GuiToggle((Rectangle){50, 220, 120, 30}, "Stop Animation", &toggleButton);
         sprite.IsAnimation = toggleButton;
 
-        if (GuiDropdownBox((Rectangle){50, 270, 120, 30}, "amber; ashes; bluish; candy; cherry; cyber; dark; enefete; genesis; jungle; lavanda; rltech; sunny; terminal", &dropdownIndex, dropdownBoxActive))
+        if (GuiDropdownBox((Rectangle){950, 50, 200, 30}, "amber; ashes; bluish; candy; cherry; cyber; dark; enefete; genesis; jungle; lavanda; rltech; sunny; terminal", &dropdownIndex, dropdownBoxActive))
         {
             dropdownBoxActive = !dropdownBoxActive;
         }
