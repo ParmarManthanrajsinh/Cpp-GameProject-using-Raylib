@@ -1,44 +1,69 @@
 #define RAYGUI_IMPLEMENTATION
 #include <raylib.h>
 #include <raygui.h>
+#include <vector>
+#include "sprite.hpp"
+
+vector<Image> CreateImages()
+{
+    vector<Image> images;
+
+    Image img1 = LoadImage("Sprites/Idle/idle1.png");
+    images.push_back(img1);
+    Image img2 = LoadImage("Sprites/Idle/idle2.png");
+    images.push_back(img2);
+    Image img3 = LoadImage("Sprites/Idle/idle3.png");
+    images.push_back(img3);
+    Image img4 = LoadImage("Sprites/Idle/idle4.png");
+    images.push_back(img4);
+
+    return images;
+}
 
 int main()
 {
-    // Initialize window
-    InitWindow(800, 450, "Raygui Example");
+    InitWindow(1280, 720, "Raygui Example");
     SetTargetFPS(60);
 
-    // Variables for GUI controls
-    bool toggleButton = false;
-    float sliderValue = 50.0f;
+    bool toggleButton = true;
+    float rotate = 0.0f;
+    float scale = 1.0f;
     int dropdownBox = 0;
     bool dropdownBoxActive = false;
     bool checkBox = false;
+    bool drawCharacter = false;
 
-    // Main game loop
+    Sprite sprite({500, 350}, CreateImages(), 0.2, true);
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         // Draw GUI controls
-        if (GuiButton((Rectangle){50, 50, 200, 30}, "Click Me!"))
+        if (GuiButton((Rectangle){50, 50, 200, 30}, "Draw Character"))
         {
-            // Action when button is pressed
+            drawCharacter = !drawCharacter;
         }
 
-        GuiCheckBox((Rectangle){50, 100, 20, 20}, "Check Box", &checkBox);
+        GuiCheckBox((Rectangle){50, 100, 20, 20}, "Hfilp", &checkBox);
+        sprite.hflip = checkBox;
 
-        GuiSlider((Rectangle){50, 150, 200, 20}, "Slider", TextFormat("%.0f", sliderValue), &sliderValue, 0, 100);
+        GuiSlider((Rectangle){50, 150, 200, 20}, "Rotate", TextFormat("%.0f", rotate), &rotate, 0, 360);
+        sprite.rotation = rotate;
 
-        GuiToggle((Rectangle){50, 200, 120, 30}, "Toggle Button", &toggleButton);
+        GuiSlider((Rectangle){50, 180, 200, 20}, "Scale", TextFormat("%.2f", scale), &scale, 0.1f, 5.0f);
+        sprite.scale = scale;
 
-        if (GuiDropdownBox((Rectangle){50, 250, 120, 30}, "Option 1;Option 2;Option 3", &dropdownBox, dropdownBoxActive))
+        GuiToggle((Rectangle){50, 220, 120, 30}, "Stop Animation", &toggleButton);
+        sprite.IsAnimation = toggleButton;
+
+        if (GuiDropdownBox((Rectangle){50, 270, 120, 30}, "Option 1;Option 2;Option 3", &dropdownBox, dropdownBoxActive))
         {
             dropdownBoxActive = !dropdownBoxActive;
         }
 
-        DrawText("Raygui Controls Example", 300, 50, 20, BLACK);
+        if (drawCharacter) sprite.Draw();
 
         EndDrawing();
     }
