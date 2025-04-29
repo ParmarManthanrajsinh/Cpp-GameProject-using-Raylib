@@ -8,14 +8,10 @@ vector<Image> CreateImages()
 {
     vector<Image> images;
 
-    Image img1 = LoadImage("Sprites/Idle/idle1.png");
-    images.push_back(img1);
-    Image img2 = LoadImage("Sprites/Idle/idle2.png");
-    images.push_back(img2);
-    Image img3 = LoadImage("Sprites/Idle/idle3.png");
-    images.push_back(img3);
-    Image img4 = LoadImage("Sprites/Idle/idle4.png");
-    images.push_back(img4);
+    images.push_back(LoadImage("Sprites/Idle/idle1.png"));
+    images.push_back(LoadImage("Sprites/Idle/idle2.png"));
+    images.push_back(LoadImage("Sprites/Idle/idle3.png"));
+    images.push_back(LoadImage("Sprites/Idle/idle4.png"));
 
     return images;
 }
@@ -28,17 +24,34 @@ int main()
     bool toggleButton = true;
     float rotate = 0.0f;
     float scale = 1.0f;
-    int dropdownBox = 0;
+    int dropdownIndex = 0;
+    int previousDropdownIndex = -1;
     bool dropdownBoxActive = false;
     bool checkBox = false;
     bool drawCharacter = false;
+
+    string styles[] = {
+        "amber",
+        "ashes",
+        "bluish",
+        "candy",
+        "cherry",
+        "cyber",
+        "dark",
+        "enefete",
+        "genesis",
+        "jungle",
+        "lavanda",
+        "rltech",
+        "sunny",
+        "terminal"};
 
     Sprite sprite({500, 350}, CreateImages(), 0.2, true);
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
 
         // Draw GUI controls
         if (GuiButton((Rectangle){50, 50, 200, 30}, "Draw Character"))
@@ -58,12 +71,19 @@ int main()
         GuiToggle((Rectangle){50, 220, 120, 30}, "Stop Animation", &toggleButton);
         sprite.IsAnimation = toggleButton;
 
-        if (GuiDropdownBox((Rectangle){50, 270, 120, 30}, "Option 1;Option 2;Option 3", &dropdownBox, dropdownBoxActive))
+        if (GuiDropdownBox((Rectangle){50, 270, 120, 30}, "amber; ashes; bluish; candy; cherry; cyber; dark; enefete; genesis; jungle; lavanda; rltech; sunny; terminal", &dropdownIndex, dropdownBoxActive))
         {
             dropdownBoxActive = !dropdownBoxActive;
         }
 
-        if (drawCharacter) sprite.Draw();
+        if (dropdownIndex != previousDropdownIndex)
+        {
+            GuiLoadStyle(TextFormat("styles/style_%s.rgs", styles[dropdownIndex].c_str()));
+            previousDropdownIndex = dropdownIndex;
+        }
+
+        if (drawCharacter)
+            sprite.Draw();
 
         EndDrawing();
     }
