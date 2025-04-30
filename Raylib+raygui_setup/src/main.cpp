@@ -3,6 +3,7 @@
 #include <raygui.h>
 #include <vector>
 #include "sprite.hpp"
+// #include "../styles_h/style_amber.h"
 
 vector<Image> CreateImages()
 {
@@ -24,11 +25,13 @@ int main()
     bool toggleButton = true;
     float rotate = 0.0f;
     float scale = 1.0f;
-    int dropdownIndex = 0;
+    int dropdownIndex = 8;
     int previousDropdownIndex = -1;
     bool dropdownBoxActive = false;
     bool checkBox = false;
     bool drawCharacter = false;
+
+    // GuiLoadStyleAmber();
 
     string styles[] = {
         "amber",
