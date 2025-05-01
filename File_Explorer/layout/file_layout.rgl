@@ -13,7 +13,7 @@ a 002 anchor02 0 0 1
 c 000 0 WindowBox000 0 0 1280 720 1 MyFile Explorer
 c 001 1 GroupBox001 8 32 144 680 2 files
 c 002 20 ScrollPanel002 160 32 1112 680 1 
-c 003 8 Toggle003 16 80 128 24 2 file1
-c 004 8 Toggle004 16 112 128 24 2 file2
-c 005 8 Toggle005 16 144 128 24 2 file3
-c 006 8 Toggle006 16 48 128 24 2 ..
+c 003 5 Button003 16 48 128 24 2 ..
+c 004 5 Button004 16 80 128 24 2 file1
+c 005 5 Button005 16 112 128 24 2 file2
+c 006 5 Button006 16 144 128 24 2 file3
