@@ -77,11 +77,8 @@ void Game::Reset()
 void Game::HandleInput()
 {
     if (IsKeyPressed(KEY_SPACE))
-    {
         flappybird.Jump();
-    }
+
     if (IsKeyDown(KEY_ENTER) && !run)
-    {
         Reset();
-    }
 }

@@ -28,6 +28,7 @@ PipeGenerator::PipeGenerator()
     lastUpdateTime = 0;
 }
 
+// Pipe distroyer 😁😁
 PipeGenerator::~PipeGenerator()
 {
     delete pipe1;
@@ -64,7 +65,6 @@ void PipeGenerator::Update()
     {
         if (pipe1->IsOffScreen())
         {
-
             int random_int = GetRandomValue(0, 1);
             float y = (random_int == 0) ? GetRandomValue(-100, 0) : (GetScreenHeight() - GetRandomValue(100, 320));
 

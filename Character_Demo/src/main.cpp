@@ -3,8 +3,8 @@
 
 int main()
 {
-    const int SCREEN_WIDTH = 1280;
-    const int SCREEN_HEIGHT = 720;
+    constexpr int SCREEN_WIDTH = 1280;
+    constexpr int SCREEN_HEIGHT = 720;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Character Demo");
     SetTargetFPS(60);
@@ -18,6 +18,7 @@ int main()
         BeginDrawing();
 
         ClearBackground(BLACK);
+        DrawText("A/D Move Left Right  |  W Punch", 40, 40, 40, PURPLE);
         character.Draw();
 
         EndDrawing();
