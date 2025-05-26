@@ -2,3 +2,5 @@
 *.dsym
 main
 build
+.vs
+.vscode
