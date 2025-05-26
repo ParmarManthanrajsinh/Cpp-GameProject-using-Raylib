@@ -18,7 +18,6 @@ if (NOT raylib_FOUND)
 endif()
 
 # We don't want raylib's examples built. This option is picked up by raylib's CMakeLists.txt
-set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(RLIMGUI_SRC rlImGui/rlImGui.cpp)
 set(IMGUI_SRC imgui/imgui.cpp imgui/imgui_draw.cpp imgui/imgui_tables.cpp imgui/imgui_widgets.cpp imgui/imgui_demo.cpp )
 
