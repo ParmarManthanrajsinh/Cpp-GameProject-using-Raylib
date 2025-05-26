@@ -11,5 +11,6 @@
 	"files.associations": {
 		"*.embeddedhtml": "html",
 		"filesystem": "cpp"
-	}
+	},
+	"C_Cpp.default.compilerPath": "C:/msys64/ucrt64/bin/g++.exe"
 }

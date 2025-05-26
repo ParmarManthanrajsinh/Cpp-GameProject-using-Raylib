@@ -1,7 +1,7 @@
-#include "raylib.h"
+#include <raylib.h>
 
 #define RAYGUI_IMPLEMENTATION
-#include "raygui.h"
+#include <raygui.h>
 
 //----------------------------------------------------------------------------------
 // Controls Functions Declaration
@@ -17,7 +17,7 @@ static void Button006();
 int main()
 {
     // Initialization
-    //---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
     int screenWidth = 1280;
     int screenHeight = 720;
 
