@@ -1,20 +1,27 @@
-#include "raylib.h"
-#include "rlImGui.h"
-#include "imgui.h"
+#include <raylib.h>
+#include <rlImGui.h>
+#include <imgui.h>
+
+#include "background.hpp"
 
 int main() {
     // Initialization
-    InitWindow(800, 600, "rlImGui Example");
+    InitWindow(900, 900, "rlImGui Example");
     SetTargetFPS(60);
 
     // Initialize rlImGui
     rlImGuiSetup(true); // true = auto load fonts
+
+    Background background("../assets/oggy.jpeg"); // Load a background image
 
     // Main game loop
     while (!WindowShouldClose()) {
         // Start Drawing
         BeginDrawing();
         ClearBackground(RAYWHITE);
+
+        // Draw the background
+        background.Draw();
 
         // Start ImGui frame
         rlImGuiBegin();
