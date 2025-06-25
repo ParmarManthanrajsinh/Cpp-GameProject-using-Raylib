@@ -4,7 +4,9 @@
 Character::Character(Vector2 pos)
 {
     Idle = new Sprite(pos, {LoadImage("Sprites/Enemy-Punk/Idle/idle1.png"), LoadImage("Sprites/Enemy-Punk/Idle/idle2.png"), LoadImage("Sprites/Enemy-Punk/Idle/idle3.png"), LoadImage("Sprites/Enemy-Punk/Idle/idle4.png")}, 0.2, true);
+
     Walk = new Sprite(pos, {LoadImage("Sprites/Enemy-Punk/Walk/walk1.png"), LoadImage("Sprites/Enemy-Punk/Walk/walk2.png"), LoadImage("Sprites/Enemy-Punk/Walk/walk3.png"), LoadImage("Sprites/Enemy-Punk/Walk/walk4.png")}, 0.2, true);
+    
     Punch = new Sprite(pos, {LoadImage("Sprites/Enemy-Punk/Punch/punch1.png"), LoadImage("Sprites/Enemy-Punk/Punch/punch2.png"), LoadImage("Sprites/Enemy-Punk/Punch/punch3.png")}, 0.2, true);
     position = pos;
 
