@@ -28,7 +28,7 @@ int main()
     SortMethod currentSortMethod = NONE;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Sorting Visualization");
-    SetTargetFPS(120);
+    SetTargetFPS(320);
 
     Button button_bubblesort(Vector2{20, 20}, text_bubble_sort, BLUE);
     Button button_selectionsort(Vector2{20, 100}, text_selection_sort, BLUE);
