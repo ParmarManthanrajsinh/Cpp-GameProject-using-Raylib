@@ -11,6 +11,7 @@
 	"files.associations": {
 		"*.embeddedhtml": "html",
 		"algorithm": "cpp",
-		"format": "cpp"
+		"format": "cpp",
+		"chrono": "cpp"
 	}
 }

@@ -1,5 +1,8 @@
 #include "block.h"
 
+/* Debuging code */
+// int Block::copy_count = 0;
+
 Block::Block()
 {
     cell_size = 30;
@@ -47,13 +50,31 @@ void Block::UndoRotation()
 
 vector<Position> Block::GetCellPosition()
 {
-    vector<Position> tiles = cells[rotation_state];
+    const vector<Position> &tiles = cells[rotation_state];
     vector<Position> movetiles;
+    movetiles.reserve(tiles.size());
 
     for (Position item : tiles)
     {
-        Position newpos = Position(item.row + rowoffset, item.col + coloffset);
-        movetiles.push_back(newpos);
+        // this also works, but is less efficient
+        // Position newpos = Position(item.row + rowoffset, item.col + coloffset);
+        // movetiles.push_back(newpos);
+
+        movetiles.emplace_back(item.row + rowoffset, item.col + coloffset);
     }
     return movetiles;
 }
+
+/* Debuging code */
+// Block::Block(const Block &other)
+// {
+//     cells = other.cells;
+//     id = other.id;
+//     cell_size = other.cell_size;
+//     rotation_state = other.rotation_state;
+//     colors = other.colors;
+//     rowoffset = other.rowoffset;
+//     coloffset = other.coloffset;
+
+//     copy_count++;
+// }

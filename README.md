@@ -56,6 +56,12 @@ This repository contains a series of mini-games developed with C++ and the **Ray
 ### 11. 🐤 FlappyBird Game Clone
 - A simple clone of the popular Flappy Bird game.
 
+### 12. 🧩 Raylib-raygui Setup
+- Raylib + Raygui Setup.
+
+### 13. 🧩 Raylib-imgui-cmake Template
+- Raylib + ImGui in CMake setup.
+
 ## 💻 Installation
 
 ### Prerequisites
